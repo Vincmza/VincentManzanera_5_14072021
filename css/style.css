@@ -1,3 +1,32 @@
+/* INDEX */
+
 body {
     background-color: rgb(243, 233, 241);
+}
+.card-by-default {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgb(178, 110, 155);
+}
+.footer-list {
+    list-style-type: none;
+}
+.border-my-own-color {
+    border-top: 2px solid rgb(178, 110, 155);
+}
+.height-by-default {
+    height:230px;
+}
+.product_img-height { /*img in product page*/
+    height:300px;
+}
+.more-details-button {
+    background-color: rgb(190, 117, 121);
+    border:1px solid rgb(190, 117, 121);
+}
+@media screen and (max-width: 1600px){
+    .card-by-default {
+        margin-bottom: 50px;;
+    }
+    
 }

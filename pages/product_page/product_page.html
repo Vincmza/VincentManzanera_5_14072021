@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-100">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/41ef362774.js" crossorigin="anonymous" defer></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Orinoco : L'ours en peluche</title>
+    </head>
+<body class="d-flex flex-column h-100">
+
+    <header>
+
+        <!--Orinoco logo + button to basket -->
+
+        <div class="navbar navbar-light d-flex">
+            <div class="col-11 d-flex justify-content-center">
+                <a class="navbar-brand" href="/pages/view_page/index.html">
+                    <img src="/images/orinoco_logo.png" alt="logo de l'entreprise orinoco">
+                </a>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-outline-dark btn-lg"><a href="#" class="text-reset"><i class="fas fa-shopping-cart"></i></a></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <h1 class="text-center">Un ours en peluche tout doux pour les grands et les petits</h1>
+
+        <section class="d-flex flex-column align-items-center mt-5 mb-5">
+           
+            <article class="card mb-3 w-50 d-flex flex-column align-items-center card-by-default shadow" style="background-color: rgb(243, 233, 241);">
+                <div>
+                    <img src="/images/teddy_1.jpg" class="img-fluid product_img_height" alt="photo teddy_1">
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">Teddy Bear</h2>
+                </div>
+                <div class="ps-4 pe-4">
+                    <p class="card-text fs-5">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="text-center fs-3">29€</p>
+                </div>
+                
+
+                    <!-- COLOR OPTION -->
+
+                <h3 class="fs-6 pb-4">Choisissez la couleur qui vous plaît !</h3>
+                <select name="item_choice" id="item_choice">
+                    <option value="tan">Brun</option>
+                    <option value="chocolate">Chocolat</option>
+                    <option value="black">Noir</option>
+                    <option value="white">Blanc</option>
+                </select>
+
+                <!-- HOW MANY OPTION -->
+
+                <h3 class="fs-6 mt-4">Combien en voulez vous ?</h3>
+                <div class="d-flex flex-column align-items-center w-50">
+                    <button type="button" class="w-25 btn btn-primary rounded-pill more-details-button mt-4">
+                        Ajouter
+                    </button>
+                    <button type="button" class="w-25 btn btn-primary rounded-pill more-details-button mt-4">
+                        Retirer
+                    </button>
+                </div>
+
+                <!-- BACK AND BASKET BUTTONS -->
+
+                <div class="d-flex justify-content-between w-50 pb-4">
+                    <button type="button" class="btn btn-secondary">
+                        Retour
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        <a href="#" class="text-reset"><i class="fas fa-shopping-cart"></i></a>
+                    </button>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+    <footer class="d-flex container-fluid mt-auto border-my-own-color">
+        <div class="d-flex">
+            <a href="/pages/view_page/index.html">
+                <img src="/images/orinoco_footer_logo.png" alt="logo orinoco">
+            </a>
+        </div>
+        <ul class="footer-list d-flex align-items-center fs-5 mb-0">
+            <li class="ms-5">Qui sommes-nous ?</li>
+            <li class="ms-5">Mentions légales</li>
+            <li class="ms-5">Newsletter</li>
+            <li class="ms-5"><a href="mailto: contact_orinoco@outlook.fr" class="text-reset text-decoration-none">Contact</a></li>
+        </ul>
+    </footer>
+    
+</body>
+</html>
