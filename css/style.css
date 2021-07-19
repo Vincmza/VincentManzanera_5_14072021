@@ -14,17 +14,20 @@ body {
 .border-my-own-color {
     border-top: 2px solid rgb(178, 110, 155);
 }
-.height-by-default {
+.height-by-default { /* img in index page */
     height:230px;
 }
 .product_img-height { /*img in product page*/
-    height:300px;
+    height:280px;
 }
-.more-details-button {
+.more-details-button { /*more details button in index page*/
     background-color: rgb(190, 117, 121);
     border:1px solid rgb(190, 117, 121);
 }
 @media screen and (max-width: 1600px){
+
+    /*card containing img in index page*/
+
     .card-by-default {
         margin-bottom: 50px;;
     }
