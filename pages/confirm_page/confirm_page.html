@@ -16,22 +16,46 @@
         <!--Orinoco logo + button to basket -->
 
         <div class="navbar navbar-light d-flex">
-            <div class="col-11 d-flex justify-content-center">
+            <div class="col-12 d-flex justify-content-center">
                 <a class="navbar-brand" href="/pages/view_page/index.html">
                     <img src="/images/orinoco_logo.png" alt="logo de l'entreprise orinoco">
                 </a>
             </div>
-            <div class="col-1">
-                <button type="button" class="btn btn-outline-dark btn-lg"><a href="#" class="text-reset"><i class="fas fa-shopping-cart"></i></a></button>
+            <!--<div class="col-1">
+                <button type="button" class="btn btn-outline-dark btn-lg"><a href="#" class="text-reset"><i class="fas fa-shopping-cart"></i></a></button>-->
             </div>
         </div>
     </header>
 
-    <main>
+    <main class="d-flex justify-content-center mt-auto">
 
-        <section>
+        <section class="p-5 fs-5 w-50 border_basket shadow">
 
-            
+            <div>
+                <h1 class="fs-3">Votre commande a bien été prise en compte</h1>
+            </div>
+            <div>
+                <p>Merci pour votre achat !</p>
+            </div>
+            <div>
+                <p>Votre commande dont l'identifiant est <span class="order_number">159-R15-69-800</span> vous sera expédiée dans un délai de 5 jours ouvrés à l'adresse suivante :</p>
+            </div>
+            <div class="customer_address">
+                <p>Tapie Bernard, 55 rue des magnolias, 13001 Marseille</p>
+            </div>
+            <div>
+                <p>Vous recevrez un mail de confirmation à l'adresse suivante :<span class="customer_email"> adroitedubut@gmail.com</span></p>
+            </div>
+
+            <!-- BACK BUTTON -->
+
+            <div>
+                <a href="/pages/view_page/index.html" class="text-rest text-decoration-none">
+                    <button type="button" class="btn btn-secondary">Retour à la page d'accueil</button>
+                </a>
+            </div>
+
+
         </section>
 
     </main>
