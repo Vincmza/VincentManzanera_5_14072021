@@ -16,6 +16,7 @@ body {
 }
 .height-by-default { /* img in index page */
     height:230px;
+    object-fit: cover;
 }
 .more-details-button { /*more details button in index page*/
     background-color: rgb(190, 117, 121);
@@ -49,3 +50,10 @@ body {
     }
     
 }
+/*@media screen and (max-width: 900px) {
+
+    .footer-responsive{
+        font-size: 0.5em;
+    }
+    
+}*/
