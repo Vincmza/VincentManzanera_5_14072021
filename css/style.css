@@ -35,6 +35,10 @@ body {
     border-radius: 20px;
     overflow: hidden;
 }
+.basket_img_height {
+    object-fit: cover;
+    height: 260px;
+}
 
 @media screen and (max-width: 1600px){
 
