@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-100">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/41ef362774.js" crossorigin="anonymous" defer></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Orinoco : Votre panier</title>
+    </head>
+<body class="d-flex flex-column h-100">
+
+    <header>
+
+        <!--Orinoco logo + button to basket -->
+
+        <div class="navbar navbar-light d-flex">
+            <div class="col-11 d-flex justify-content-center">
+                <a class="navbar-brand" href="/pages/view_page/index.html">
+                    <img src="/images/orinoco_logo.png" alt="logo de l'entreprise orinoco">
+                </a>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-outline-dark btn-lg"><a href="#" class="text-reset"><i class="fas fa-shopping-cart"></i></a></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="d-flex flex-column align-items-center">
+
+        <h1 class="text-center">Un ours en peluche tout doux pour les grands et les petits</h1>
+
+        <!-- BASKET SUM UP-->
+
+        <section class="d-flex flex-column w-50 p-4">
+
+
+            <h2 class="text-center mb-4"><i class="fas fa-shopping-cart pe-5"></i>Votre panier</h2>
+
+            <div class="d-flex justify-content-evenly border_basket shadow p-4">
+
+                <div>
+                    <h3 class="fs-5">Modèle</h3>
+                    <label for="teddy_model">
+                        <input type="text" name="teddy_model" id="teddy_model">
+                    </label>
+                </div>
+
+                <div>
+                    <h3 class="fs-5">Quantité</h3>
+                    <label for="quantity">
+                        <input type="number" min="0" name="teddy_quantity" id="teddy_quantity">
+                    </label>
+                </div>
+
+                <div>
+                    <h3 class="fs-5">Prix unitaire</h3>
+                    <label for="teddy_price">
+                        <input type="number" min="0" name="teddy_price" id="teddy_price">
+                    </label>
+                </div>
+
+                <div>
+                    <h3 class="fs-5">Prix total</h3>
+                    <label for="total_price">
+                        <input type="number" min="0" name="total_price" id="total_price">
+                    </label>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--PERSONNAL INFORMATIONS-->
+
+        <section class="w-50 m-5">
+
+            <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="lastname" class="form-label">Nom</label>
+                  <input type="text" class="form-control" placeholder="Votre nom" id="lastname">
+                </div>
+                <div class="col-md-6">
+                  <label for="firstname" class="form-label">Prénom</label>
+                  <input type="text" class="form-control" placeholder="Votre prénom" id="firstname">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">Adresse postale</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="35 Avenue Jean-Jaurès">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Adresse supplémentaire</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Etage n°3, Appartement n°2">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">Ville</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">Département</label>
+                  <select id="inputState" class="form-select">
+                    <option value="choose">Sélectionner votre département</option>
+                    <option value="drome">Drôme</option>
+                    <option value="ardeche">Ardèche</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label for="postalCode" class="form-label">Code postal</label>
+                  <input type="number" min="0" maxlength="5" class="form-control" id="postalCode">
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Je ne suis pas un robot
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Valider le formulaire et procéder au paiement</button>
+                </div>
+                <div>
+                    <a href="/pages/product_page/product_page.html" class="text-rest text-decoration-none">
+                        <button type="button" class="btn btn-secondary">Retour</button>
+                    </a>
+                </div>
+              </form>
+
+        </section>
+
+    </main>
+
+    <footer class="d-flex container-fluid mt-auto border-my-own-color">
+        <div class="d-flex">
+            <a href="/pages/view_page/index.html">
+                <img src="/images/orinoco_footer_logo.png" alt="logo orinoco">
+            </a>
+        </div>
+        <ul class="footer-list d-flex align-items-center fs-5 mb-0">
+            <li class="ms-5">Qui sommes-nous ?</li>
+            <li class="ms-5">Mentions légales</li>
+            <li class="ms-5">Newsletter</li>
+            <li class="ms-5"><a href="mailto: contact_orinoco@outlook.fr" class="text-reset text-decoration-none">Contact</a></li>
+        </ul>
+    </footer>
+    
+</body>
+</html>

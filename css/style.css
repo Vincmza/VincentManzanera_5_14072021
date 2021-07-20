@@ -17,13 +17,24 @@ body {
 .height-by-default { /* img in index page */
     height:230px;
 }
-.product_img-height { /*img in product page*/
-    height:280px;
-}
 .more-details-button { /*more details button in index page*/
     background-color: rgb(190, 117, 121);
     border:1px solid rgb(190, 117, 121);
 }
+
+/* PRODUCT PAGE */
+
+.product_img-height { /*img in product page*/
+    height:280px;
+}
+
+/* BASKET PAGE */
+
+.border_basket {
+    border: 1px solid rgb(178, 110, 155);
+    border-radius: 20px;
+}
+
 @media screen and (max-width: 1600px){
 
     /*card containing img in index page*/
