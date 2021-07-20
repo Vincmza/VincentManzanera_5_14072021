@@ -79,15 +79,15 @@
             <form class="row g-3">
                 <div class="col-md-6">
                   <label for="lastname" class="form-label">Nom</label>
-                  <input type="text" class="form-control" placeholder="Votre nom" id="lastname">
+                  <input type="text" class="form-control" placeholder="Votre nom" id="lastname" required>
                 </div>
                 <div class="col-md-6">
                   <label for="firstname" class="form-label">Prénom</label>
-                  <input type="text" class="form-control" placeholder="Votre prénom" id="firstname">
+                  <input type="text" class="form-control" placeholder="Votre prénom" id="firstname" required>
                 </div>
                 <div class="col-12">
                   <label for="inputAddress" class="form-label">Adresse postale</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="35 Avenue Jean-Jaurès">
+                  <input type="text" class="form-control" id="inputAddress" placeholder="35 Avenue Jean-Jaurès" required>
                 </div>
                 <div class="col-12">
                   <label for="inputAddress2" class="form-label">Adresse supplémentaire</label>
@@ -95,8 +95,12 @@
                 </div>
                 <div class="col-md-6">
                   <label for="inputCity" class="form-label">Ville</label>
-                  <input type="text" class="form-control" id="inputCity">
+                  <input type="text" class="form-control" id="inputCity" placeholder="Votre ville" required>
                 </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="Votre email" id="email" required>
+                  </div>
                 <div class="col-md-4">
                   <label for="inputState" class="form-label">Département</label>
                   <select id="inputState" class="form-select">
@@ -107,11 +111,11 @@
                 </div>
                 <div class="col-md-2">
                   <label for="postalCode" class="form-label">Code postal</label>
-                  <input type="number" min="0" maxlength="5" class="form-control" id="postalCode">
+                  <input type="number" min="0" maxlength="5" class="form-control" id="postalCode" required>
                 </div>
                 <div class="col-12">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" required>
                     <label class="form-check-label" for="gridCheck">
                       Je ne suis pas un robot
                     </label>
