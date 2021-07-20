@@ -33,6 +33,7 @@ body {
 .border_basket {
     border: 1px solid rgb(178, 110, 155);
     border-radius: 20px;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 1600px){
