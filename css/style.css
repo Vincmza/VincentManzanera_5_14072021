@@ -50,10 +50,35 @@ body {
     }
     
 }
-/*@media screen and (max-width: 900px) {
+@media screen and (max-width: 996px) {
 
-    .footer-responsive{
-        font-size: 0.5em;
+    /*FOOTER RESPONSIVE DESIGN*/
+
+    .footer-list {
+        padding-left: 0;
+        flex-direction: column;
+        align-items: center !important;
+    }
+    .footer-list > li {
+        font-size: 0.9em;
+    }
+    .footer-responsive {
+        flex-direction: column;
+        align-items: center;
     }
     
-}*/
+}
+@media screen and (max-width: 768px) {
+
+    .footer-list > li {
+        font-size: 1em;
+    }
+
+}
+@media screen and (max-width: 450px) {
+
+    .navbar-brand > img {
+        width:230px;
+    }
+}
+
