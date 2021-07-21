@@ -39,6 +39,10 @@ body {
 .basket_img_height {
     object-fit: cover;
     height: 260px;
+    width: 100%;
+}
+.basket-font {
+    font-size: 1.3em;
 }
 
 @media screen and (max-width: 1600px){
@@ -79,6 +83,12 @@ body {
 
     .navbar-brand > img {
         width:230px;
+    }
+    .basket-font-responsive {
+        font-size: 1.5em;
+    }
+    .basket-font {
+        font-size: 1em;
     }
 }
 
