@@ -16,24 +16,25 @@
         <!--Orinoco logo + button to basket -->
 
         <div class="navbar navbar-light d-flex">
-            <div class="col-md-11 d-flex justify-content-center col-10">
+            <div class="col-md-10 col-lg-11 d-flex justify-content-center col-8">
                 <a class="navbar-brand" href="/pages/view_page/index.html">
                     <img src="/images/orinoco_logo.png" alt="logo de l'entreprise orinoco">
                 </a>
             </div>
-            <div class="col-2 col-md-1">
+            <div class="col-4 col-md-2 col-lg-1 header_basket_button">
                 <button type="button" class="btn btn-outline-dark btn-lg"><a href="/pages/basket_page/basket_page.html" class="text-reset"><i class="fas fa-shopping-cart"></i></a></button>
             </div>
         </div>
+
     </header>
 
     <main>
 
         <h1 class="text-center">Un ours en peluche tout doux pour les grands et les petits</h1>
 
-        <section class="d-flex flex-column align-items-center mt-5 mb-5">
+        <section class="d-flex justify-content-center mt-5 mb-5">
            
-            <article class="card mb-3 w-50 d-flex flex-column align-items-center card-by-default shadow" style="background-color: rgb(243, 233, 241);">
+            <article class="card mb-3 d-flex flex-column align-items-center card-by-default shadow col-10 col-sm-10 col-md-8 col-xl-6  " style="background-color: rgb(243, 233, 241);">
 
                 <div>
                     <img src="/images/teddy_1.jpg" class="img-fluid product_img_height" alt="photo teddy_1">
@@ -43,15 +44,15 @@
                     <h2 class="card-title">Teddy Bear</h2>
                 </div>
                 
-                <div class="ps-4 pe-4">
-                    <p class="card-text fs-5">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="ps-2 pe-2">
+                    <p class="card-text product_page_description">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     <p class="text-center fs-2">29€</p>
                 </div>
                 
 
                 <!-- COLOR OPTION -->
 
-                <h3 class="fs-6 pb-4">Choisissez la couleur qui vous plaît !</h3>
+                <h3 class="fs-6 pb-4 ps-2 pe-2">Choisissez la couleur qui vous plaît !</h3>
 
                 <select name="item_choice" id="item_choice">
 
@@ -64,17 +65,17 @@
 
                 <!-- ADD AND REMOVE BUTTONS -->
 
-                <h3 class="fs-6 mt-4">Combien en voulez vous ?</h3>
+                <h3 class="fs-6 mt-4 ps-2 pe-2">Combien en voulez vous ?</h3>
 
-                <div class="d-flex flex-column align-items-center w-50">
+                <div class="d-flex flex-column align-items-center col-8">
 
-                    <input class="mt-4 w-25" type="number" min="0" placeholder="Choisissez" maxlength="2">
+                    <input class="mt-4 col-xl-2 col-md-4 col-xs-5" type="number" min="0" placeholder="Choisissez" maxlength="2">
 
-                    <button type="button" class="w-auto btn btn-primary rounded-pill more-details-button mt-4 fs-5">
+                    <button type="button" class="btn btn-success rounded-pill more-details-button mt-4 col-xl-4 product_page_font">
                         Ajouter au panier
                     </button>
 
-                    <button type="button" class="w-auto btn btn-primary rounded-pill more-details-button mt-4 fs-5">
+                    <button type="button" class="btn btn-danger rounded-pill more-details-button mt-4 col-xl-4 product_page_font">
                         Retirer du panier
                     </button>
 
@@ -82,14 +83,14 @@
 
                 <!-- BACK AND BASKET BUTTONS -->
 
-                <div class="d-flex justify-content-between w-50 pb-4">
+                <div class="d-flex justify-content-between col-11 pb-4 back_and_basket_button_position">
 
-                    <button type="button" class="btn btn-secondary fs-5">
+                    <button type="button" class="btn btn-secondary fs-5 col-xl-2 prodcut_page_back_button">
                         <a href="/pages/view_page/index.html" class="text-reset text-decoration-none">Retour</a>
                     </button>
 
 
-                    <button type="button" class="btn btn-primary fs-5">
+                    <button type="button" class="btn btn-primary fs-5 col-xl-1">
                         <a href="/pages/basket_page/basket_page.html" class="text-reset"><i class="fas fa-shopping-cart"></i></a>
                     </button>
 
@@ -102,16 +103,16 @@
 
 
     <footer class="footer-responsive d-flex container-fluid mt-auto border-my-own-color ps-0 pe-0 ps-lg-2 mb-4 mb-lg-0">
-        <div class="d-flex">
+        <div class="d-flex footer-img">
             <a href="/pages/view_page/index.html">
                 <img src="/images/orinoco_footer_logo.png" alt="logo orinoco">
             </a>
         </div>
         <ul class="footer-list d-flex align-items-center fs-5 mb-0 ps-0">
-            <li class="ps-0 ps-lg-4 mb-2 mb-lg-0">Qui sommes-nous ?</li>
-            <li class="ps-0 ps-lg-4 mb-2 mb-lg-0">Mentions légales</li>
-            <li class="ps-0 ps-lg-4 mb-2 mb-lg-0">Newsletter</li>
-            <li class="ps-0 ps-lg-4 mb-2 mb-lg-0"><a href="mailto: contact_orinoco@outlook.fr" class="text-reset text-decoration-none">Contact</a></li>
+            <li class="ps-4 ps-sm-4 mb-2 mb-lg-0">Qui sommes-nous ?</li>
+            <li class="ps-4 ps-sm-4 mb-2 mb-lg-0">Mentions légales</li>
+            <li class="ps-4 ps-sm-4 mb-2 mb-lg-0">Newsletter</li>
+            <li class="ps-4 ps-sm-4 mb-2 mb-lg-0"><a href="mailto: contact_orinoco@outlook.fr" class="text-reset text-decoration-none">Contact</a></li>
         </ul>
     </footer>
     
