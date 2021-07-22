@@ -29,10 +29,10 @@
 
     <main class="d-flex flex-column align-items-center">
 
-        <h1 class="text-center">Un ours en peluche tout doux pour les grands et les petits</h1>
+        <h1 class="text-center p-4">Un ours en peluche tout doux pour les grands et les petits</h1>
 
 
-        <section class="d-flex flex-column col-8 p-4">
+        <section class="d-flex flex-column col-12 col-lg-8 col-xl-6 p-4">
 
 
             <h2 class="text-center"><i class="fas fa-shopping-cart pe-5"></i>Votre panier</h2>
@@ -47,7 +47,7 @@
                         <img src="/images/teddy_1.jpg" class="img-fluid rounded-start basket_img_height" alt="...">
                       </div>
                       <div class="col-sm-8">
-                        <div class="card-body">
+                        <div class="card-body product_caption">
                           <h3 class="card-title fs-3">Teddy Bear</h3>
                           <div>
                             <p class="basket-font">Modèle : <span class="model">Chocolat</span></p>
@@ -55,19 +55,19 @@
                           <!--<div>
                             <p class="fs-5">Quantité : <span class="quantity">2</span></p>
                           </div> -->
-                          <div class="d-flex">
+                          <div class="d-flex basket_quantity_responsive">
                             <div class="me-3">
-                                <p class="fs-5">Quantité : <span class="quantity">2</span></p>
+                                <p class="basket-font">Quantité : <span class="quantity">2</span></p>
                             </div> 
-                            <label for="quantity_change">
-                                <input class="w-50" type="number" min="0" maxlength="2" id="quantity_changer" value="2">
+                            <label for="quantity_change" class="basket_input_position">
+                                <input class="w-50 basket-font" type="number" min="0" maxlength="2" id="quantity_changer" value="2">
                             </label>
                           </div>
                           <div>
-                            <p class="fs-5">Prix unitaire : <span class="price">29€</span></p>
+                            <p class="basket-font">Prix unitaire : <span class="price">29€</span></p>
                           </div>
                           <div>
-                            <p class="fs-5">Prix total : <span class="this_basket_total_price">58€</span></p>
+                            <p class="basket-font">Prix total : <span class="this_basket_total_price">58€</span></p>
                           </div>
                           
                         </div>
@@ -82,41 +82,45 @@
 
             <div class="border_basket shadow p-3 mt-4">
 
-                <div class="card">
-                    <div class="row g-0">
-                      <div class="col-sm-4">
-                        <img src="/images/teddy_2.jpg" class="img-fluid rounded-start basket_img_height" alt="...">
-                      </div>
-                      <div class="col-sm-8">
-                        <div class="card-body">
-                          <h3 class="card-title fs-3">Teddy Bear</h3>
-                          <div>
-                            <p class="fs-5">Modèle : <span class="model">Chocolat</span></p>
-                          </div>
-                          <!--<div>
-                            <p class="fs-5">Quantité : <span class="quantity">2</span></p>
-                          </div> -->
-                          <div class="d-flex">
-                            <div class="me-3">
-                                <p class="fs-5">Quantité : <span class="quantity">1</span></p>
-                            </div> 
-                            <label for="quantity_change">
-                                <input class="w-50" type="number" min="0" maxlength="2" id="quantity_changer" value="2">
-                            </label>
-                          </div>
-                          <div>
-                            <p class="fs-5">Prix unitaire : <span class="price">35€</span></p>
-                          </div>
-                          <div>
-                            <p class="fs-5">Prix total : <span class="this_basket_total_price">35€</span></p>
-                          </div>
-                          
+              <div class="card">
+                  <div class="row g-0">
+                    <div class="col-sm-4">
+                      <img src="/images/teddy_1.jpg" class="img-fluid rounded-start basket_img_height" alt="...">
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="card-body product_caption">
+                        <h3 class="card-title fs-3">Teddy Bear</h3>
+                        <div>
+                          <p class="basket-font">Modèle : <span class="model">Chocolat</span></p>
                         </div>
+                        <!--<div>
+                          <p class="fs-5">Quantité : <span class="quantity">2</span></p>
+                        </div> -->
+                        <div class="d-flex basket_quantity_responsive">
+                          <div class="me-3">
+                              <p class="basket-font">Quantité : <span class="quantity">2</span></p>
+                          </div> 
+                          <label for="quantity_change" class="basket_input_position">
+                              <input class="w-50 basket-font" type="number" min="0" maxlength="2" id="quantity_changer" value="2">
+                          </label>
+                        </div>
+                        <div>
+                          <p class="basket-font">Prix unitaire : <span class="price">29€</span></p>
+                        </div>
+                        <div>
+                          <p class="basket-font">Prix total : <span class="this_basket_total_price">58€</span></p>
+                        </div>
+                        
                       </div>
                     </div>
-                </div>
+                  </div>
+              </div>
+
               
             </div>
+
+            <!-- TOTAL SUM UP -->
+
             <div class="border_basket mt-5 p-2 d-flex justify-content-center shadow">
                 <p class="mb-0 fs-4">Total à payer : <span class="total_price">93€</span></p>
             </div>
@@ -125,7 +129,7 @@
 
         <!--PERSONNAL INFORMATIONS-->
 
-        <section class="w-lg-50 col-8 m-5">
+        <section class="col-8 m-5">
 
             <form class="row g-3">
                 <div class="col-md-6">
@@ -160,7 +164,7 @@
                     <option value="ardeche">Ardèche</option>
                   </select>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                   <label for="postalCode" class="form-label">Code postal</label>
                   <input type="text" maxlength="5" class="form-control" id="postalCode" required>
                 </div>

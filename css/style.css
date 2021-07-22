@@ -42,8 +42,10 @@ body {
     width: 100%;
 }
 .basket-font {
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
+
+/*RESPONSIVE PART*/
 
 @media screen and (max-width: 1600px){
 
@@ -79,6 +81,31 @@ body {
     }
 
 }
+@media screen and (max-width: 660px){
+    .basket-font {
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 575px){
+    .product_caption {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .basket_quantity_responsive {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .basket_input_position {
+        justify-content: center;
+        display: flex;
+        margin-bottom: 15px;
+    }
+    .basket-font {
+        font-size: 1.2em;
+    }
+}
 @media screen and (max-width: 450px) {
 
     .navbar-brand > img {
@@ -87,8 +114,6 @@ body {
     .basket-font-responsive {
         font-size: 1.5em;
     }
-    .basket-font {
-        font-size: 1em;
-    }
 }
+
 
