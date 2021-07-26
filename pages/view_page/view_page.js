@@ -15,7 +15,7 @@ function getTeddiesInfos (url) {
     })
 }
 
-async function displayTeddiesInfo (/*data*/){
+async function displayTeddiesInfo (){
 
     const data= await getTeddiesInfos(BASE_URL);
     data.forEach(teddy => {
@@ -35,7 +35,7 @@ function createTeddyCard (teddy){
       <h2 class="card-title">${teddy.name}</h2>
       <p class="card-text">${teddy.description}</p>
       <p class="text-center fs-3">${teddy.price/100}€</p>
-      <div class="d-flex justify-content-end"><a href="/pages/product_page/product_page.html?id=${teddy._id}" class="btn btn-primary rounded-pill more-details-button">Plus de détails</a></div>                    
+      <div class="d-flex justify-content-end"><a href="/pages/product_page/product_page.html?_id=${teddy._id}" class="btn btn-primary rounded-pill more-details-button">Plus de détails</a></div>                    
     </div>
 
     </article>`
