@@ -4,6 +4,8 @@ const id = new URLSearchParams(document.location.search).get('_id');
 
 const localhosturl = 'http://localhost:3000/api/teddies/' + id;
 
+let basket = [];
+
 
 function getTeddiesInfos(){
 
@@ -58,13 +60,13 @@ function getTeddiesInfos(){
 
             <div class="d-flex flex-column align-items-center col-8">
 
-                <input class="mt-4 col-xl-2 col-md-4 col-xs-5" type="number" min="0" placeholder="Choisissez" maxlength="2">
+                <input id="quantity" class="mt-4 col-xl-2 col-md-4 col-xs-5" type="number" min="0" placeholder="Choisissez" maxlength="2">
 
-                <button type="button" class="btn btn-success rounded-pill more-details-button mt-4 col-xl-4 product_page_font">
+                <button type="button" id="add_button" class="btn btn-success rounded-pill more-details-button mt-4 col-xl-4 product_page_font">
                     Ajouter au panier
                 </button>
 
-                <button type="button" class="btn btn-danger rounded-pill more-details-button mt-4 col-xl-4 product_page_font">
+                <button type="button" id="remove_button" class="btn btn-danger rounded-pill more-details-button mt-4 col-xl-4 product_page_font">
                     Retirer du panier
                 </button>
 
@@ -85,11 +87,65 @@ function getTeddiesInfos(){
 
             </div>
         </article>`
+
+        clickOnAddButton(data);
+        colorChoice(data);
+        clickOnRemoveButton();
                 
     })
 }
 
+function clickOnAddButton(teddy){
+
+    const addButton = document.getElementById('add_button');
+
+    teddy.quantity = 0;
+
+    addButton.addEventListener('click', function(){
+
+        //Récupérer la valeur correspondant à la quantité
+
+        let quantity = parseInt(document.getElementById('quantity').value);
+        
+        teddy.quantity += quantity;
+
+        console.log(teddy);
+
+        //Savoir si l'objet en question existe déjà dans l'array basket
+        //S'il n'existe pas = .push
+        //S'il existe le récupérer et lui ajouter la quantité
+
+    });
+
+}
+
+function colorChoice(addColorChoice){
+
+    let colorChoice = document.getElementById('item_choice');
+
+    colorChoice.addEventListener('change', function(){
+
+        let colorValue = colorChoice.value;
+
+        console.log(colorChoice.value);
+        
+    })
+}
+
+function clickOnRemoveButton(){
+
+    const removeButton = document.getElementById('remove_button');
+
+    removeButton.addEventListener('click', function(){
+        console.log('Je ne suis pas bob le macroniste');
+    });
+
+}
+
 getTeddiesInfos();
+
+
+
 
 
 
