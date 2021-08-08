@@ -19,9 +19,62 @@ function getTeddiesInfos(){
 
         console.log(data);
 
-        let colorModel = '';
+        teddyColors(data);
 
-        data.colors.forEach(teddy_color => {
+        clickOnAddButton(data);
+
+        clickOnRemoveButton(data);
+                
+    })
+}
+
+function clickOnAddButton(teddy){
+
+    const addButton = document.getElementById('add_button');
+
+    addButton.addEventListener('click', function(){
+
+        let inputQuantity = parseInt(document.getElementById('quantity').value);
+
+        if(inputQuantity > 0){
+
+            teddy.quantity += inputQuantity;
+        
+            window.localStorage.setItem(teddy.name, JSON.stringify(teddy));
+        }
+    });
+
+    const localStorageInfos = JSON.parse(window.localStorage.getItem(teddy.name));
+
+    if(localStorageInfos != null){
+
+       teddy.quantity = localStorageInfos.quantity;
+
+    } else {
+
+    teddy.quantity = 0;
+
+    } 
+}
+
+function clickOnRemoveButton(teddy){
+
+    const removeButton = document.getElementById('remove_button');
+
+    removeButton.addEventListener('click', function(){
+
+        teddy.quantity = 0;
+
+        window.localStorage.removeItem(teddy.name);
+    });
+
+}
+
+function teddyColors(color){
+
+    let colorModel = '';
+
+        color.colors.forEach(teddy_color => {
 
             colorModel += `<option value="${teddy_color}">${teddy_color}</option>`
           
@@ -30,15 +83,15 @@ function getTeddiesInfos(){
             teddyProductPage.innerHTML = `<article class="card mb-3 d-flex flex-column align-items-center card-by-default shadow col-10 col-sm-10 col-md-8 col-xl-6" style="background-color: rgb(243, 233, 241);">
 
             <div>
-                <img src="${data.imageUrl}" class="img-fluid product_img_height" alt="photo teddy_1">
+                <img src="${color.imageUrl}" class="img-fluid product_img_height" alt="photo teddy_1">
             </div>
 
             <div class="card-body">
-                <h2 class="card-title">${data.name}</h2>
+                <h2 class="card-title">${color.name}</h2>
             </div>
             
             <div class="ps-2 pe-2">
-                <p class="card-text product_page_description">${data.description}</p>
+                <p class="card-text product_page_description">${color.description}</p>
                 <p class="text-center fs-2">29€</p>
             </div>
             
@@ -60,7 +113,7 @@ function getTeddiesInfos(){
 
             <div class="d-flex flex-column align-items-center col-8">
 
-                <input id="quantity" class="mt-4 col-xl-2 col-md-4 col-xs-5" type="number" min="0" placeholder="Choisissez" maxlength="2">
+                <input id="quantity" class="mt-4 col-xl-2 col-md-4 col-xs-5" type="number" min="1" placeholder="Choisissez" maxlength="2" value="1">
 
                 <button type="button" id="add_button" class="btn btn-success rounded-pill more-details-button mt-4 col-xl-4 product_page_font">
                     Ajouter au panier
@@ -87,58 +140,6 @@ function getTeddiesInfos(){
 
             </div>
         </article>`
-
-        clickOnAddButton(data);
-        colorChoice(data);
-        clickOnRemoveButton();
-                
-    })
-}
-
-function clickOnAddButton(teddy){
-
-    const addButton = document.getElementById('add_button');
-
-    teddy.quantity = 0;
-
-    addButton.addEventListener('click', function(){
-
-        //Récupérer la valeur correspondant à la quantité
-
-        let quantity = parseInt(document.getElementById('quantity').value);
-        
-        teddy.quantity += quantity;
-
-        console.log(teddy);
-
-        //Savoir si l'objet en question existe déjà dans l'array basket
-        //S'il n'existe pas = .push
-        //S'il existe le récupérer et lui ajouter la quantité
-
-    });
-
-}
-
-function colorChoice(addColorChoice){
-
-    let colorChoice = document.getElementById('item_choice');
-
-    colorChoice.addEventListener('change', function(){
-
-        let colorValue = colorChoice.value;
-
-        console.log(colorChoice.value);
-        
-    })
-}
-
-function clickOnRemoveButton(){
-
-    const removeButton = document.getElementById('remove_button');
-
-    removeButton.addEventListener('click', function(){
-        console.log('Je ne suis pas bob le macroniste');
-    });
 
 }
 
