@@ -20,34 +20,34 @@ for (let i =0; i<window.localStorage.length; i++){ /*Run local storage data and 
 
 const orderContainer = document.getElementById('order_container');
 
-function displayOrder(){
+function displayOrder(){ /*Display what customer chose from product_page*/
 
     for(let i = 0; i<productArray.length; i++){
 
         orderContainer.innerHTML += `<div class="card">
         <div class="row g-0">
           <div class="col-sm-4">
-            <img src="${[i].imageUrl}" class="img-fluid rounded-start basket_img_height" alt="...">
+            <img src="${productArray[i].imageUrl}" class="img-fluid rounded-start basket_img_height" alt="...">
           </div>
           <div class="col-sm-8">
             <div class="card-body product_caption">
-              <h3 class="card-title fs-3">Teddy Bear</h3>
+              <h3 class="card-title fs-3">${productArray[i].name}</h3>
               <div>
-                <p class="basket-font">Modèle : <span class="model">Chocolat</span></p>
+                <p class="basket-font">Modèle : <span class="model">${productArray[i].colors}</span></p>
               </div>
               <div class="d-flex basket_quantity_responsive">
                 <div class="me-3">
-                    <p class="basket-font">Quantité : <span class="quantity">2</span></p>
+                    <p class="basket-font">Quantité : <span class="quantity">${productArray[i].quantity}</span></p>
                 </div> 
                 <label for="quantity_change" class="basket_input_position">
-                    <input class="w-50 basket-font" type="number" min="0" maxlength="2" id="quantity_changer" value="2">
+                    <input class="w-50 basket-font" type="number" min="0" maxlength="2" id="quantity_changer" value="${productArray[i].quantity}">
                 </label>
               </div>
               <div>
-                <p class="basket-font">Prix unitaire : <span class="price">29€</span></p>
+                <p class="basket-font">Prix unitaire : <span class="price">${productArray[i].price/100} €</span></p>
               </div>
               <div>
-                <p class="basket-font">Prix total : <span class="this_basket_total_price">58€</span></p>
+                <p class="basket-font">Prix total : <span class="this_basket_total_price">${productArray[i].quantity*productArray[i].price/100} €</span></p>
               </div>
               <div>
                 
@@ -60,8 +60,16 @@ function displayOrder(){
         </div>
     </div>`
 
+    
+
     }
 }
+
+function changeQuantity(){
+
+    
+}
+
 displayOrder();
 
 
