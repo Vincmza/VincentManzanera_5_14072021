@@ -10,7 +10,7 @@ function getDataFromLocalStorage(key){ /*Get local storage data to parse them*/
     return null
 }
 
-const productArray = [];
+const productArray = []; /*local storage data storage*/
 
 for (let i =0; i<window.localStorage.length; i++){ /*Run local storage data and store them in productArray*/
 
@@ -24,7 +24,7 @@ function displayOrder(){ /*Display what customer chose from product_page*/
 
     for(let i = 0; i<productArray.length; i++){
 
-        orderContainer.innerHTML += `<div class="card">
+        orderContainer.innerHTML += `<div class="card mb-4">
         <div class="row g-0">
           <div class="col-sm-4">
             <img src="${productArray[i].imageUrl}" class="img-fluid rounded-start basket_img_height" alt="...">
@@ -37,7 +37,7 @@ function displayOrder(){ /*Display what customer chose from product_page*/
               </div>
               <div class="d-flex basket_quantity_responsive">
                 <div class="me-3">
-                    <p class="basket-font">Quantité : <span class="quantity">${productArray[i].quantity}</span></p>
+                    <p class="basket-font">Quantité : <span id="quantity">${productArray[i].quantity}</span></p>
                 </div> 
                 <label for="quantity_change" class="basket_input_position">
                     <input class="w-50 basket-font" type="number" min="0" maxlength="2" id="quantity_changer" value="${productArray[i].quantity}">
@@ -60,18 +60,20 @@ function displayOrder(){ /*Display what customer chose from product_page*/
         </div>
     </div>`
 
-    
+    const inputQuantity = parseInt(document.getElementById('quantity_changer').value); /*get input value*/
+
+    console.log(inputQuantity);
+
+    const quantityDisplayed = document.getElementById('quantity'); /*get quantity displayed next to input*/
+
+    console.log(quantityDisplayed);
+
+
 
     }
 }
 
-function changeQuantity(){
-
-    
-}
-
 displayOrder();
-
 
 console.log(productArray);
 
