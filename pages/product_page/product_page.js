@@ -19,16 +19,14 @@ function getTeddiesInfos(){
 
         console.log(data);
 
-        teddyColors(data);
+        chooseTeddyColor(data);
 
-        clickOnAddButton(data);
-
-        clickOnRemoveButton(data);
+        increaseQuantity(data);
                 
     })
 }
 
-function clickOnAddButton(teddy){
+function increaseQuantity(teddy){
 
     const addButton = document.getElementById('add_button');
 
@@ -70,7 +68,7 @@ function clickOnRemoveButton(teddy){
 
 }
 
-function teddyColors(color){
+function chooseTeddyColor(color){
 
     let colorModel = '';
 
@@ -117,10 +115,6 @@ function teddyColors(color){
 
                 <button type="button" id="add_button" class="btn btn-success rounded-pill more-details-button mt-4 col-xl-4 product_page_font">
                     Ajouter au panier
-                </button>
-
-                <button type="button" id="remove_button" class="btn btn-danger rounded-pill more-details-button mt-4 col-xl-4 product_page_font">
-                    Retirer du panier
                 </button>
 
             </div>

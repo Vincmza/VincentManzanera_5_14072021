@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/41ef362774.js" crossorigin="anonymous" defer></script>
+        <script src="basket_page.js"defer></script>
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/style.css">
         <title>Orinoco : Votre panier</title>
@@ -40,9 +41,9 @@
 
             <!-- BASKET SUM UP-->
 
-            <div class="border_basket shadow p-3 mt-4">
+            <div id="order_container" class="border_basket shadow p-3 mt-4">
 
-                <div class="card">
+                <!--<div class="card">
                     <div class="row g-0">
                       <div class="col-sm-4">
                         <img src="/images/teddy_1.jpg" class="img-fluid rounded-start basket_img_height" alt="...">
@@ -53,9 +54,6 @@
                           <div>
                             <p class="basket-font">Modèle : <span class="model">Chocolat</span></p>
                           </div>
-                          <!--<div>
-                            <p class="fs-5">Quantité : <span class="quantity">2</span></p>
-                          </div> -->
                           <div class="d-flex basket_quantity_responsive">
                             <div class="me-3">
                                 <p class="basket-font">Quantité : <span class="quantity">2</span></p>
@@ -70,57 +68,22 @@
                           <div>
                             <p class="basket-font">Prix total : <span class="this_basket_total_price">58€</span></p>
                           </div>
+                          <div>
+                            
+                            <button id="remove_button" type="button" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+                              
+                          </div>
                           
                         </div>
                       </div>
                     </div>
-                </div>
-
-                
-            </div>
-
-            <!-- BASKET SUM UP-->
-
-            <div class="border_basket shadow p-3 mt-4">
-
-              <div class="card">
-                  <div class="row g-0">
-                    <div class="col-sm-4">
-                      <img src="/images/teddy_1.jpg" class="img-fluid rounded-start basket_img_height" alt="...">
-                    </div>
-                    <div class="col-sm-8">
-                      <div class="card-body product_caption">
-                        <h3 class="card-title fs-3">Teddy Bear</h3>
-                        <div>
-                          <p class="basket-font">Modèle : <span class="model">Chocolat</span></p>
-                        </div>
-                        <!--<div>
-                          <p class="fs-5">Quantité : <span class="quantity">2</span></p>
-                        </div> -->
-                        <div class="d-flex basket_quantity_responsive">
-                          <div class="me-3">
-                              <p class="basket-font">Quantité : <span class="quantity">2</span></p>
-                          </div> 
-                          <label for="quantity_change" class="basket_input_position">
-                              <input class="w-50 basket-font" type="number" min="0" maxlength="2" id="quantity_changer" value="2">
-                          </label>
-                        </div>
-                        <div>
-                          <p class="basket-font">Prix unitaire : <span class="price">29€</span></p>
-                        </div>
-                        <div>
-                          <p class="basket-font">Prix total : <span class="this_basket_total_price">58€</span></p>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-              </div>
-
+                </div>-->
               
             </div>
 
-            <!-- TOTAL SUM UP -->
+             
+
+            <!-- TOTAL SUM UP-->
 
             <div class="border_basket mt-5 p-2 d-flex justify-content-center shadow">
                 <p class="mb-0 fs-4">Total à payer : <span class="total_price">93€</span></p>
