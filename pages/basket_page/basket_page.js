@@ -37,14 +37,14 @@ function displayOrder(){ /*Display what customer chose from product_page*/
               </div>
               <div class="d-flex basket_quantity_responsive">
                 <div class="me-3">
-                    <p class="basket-font">Quantité : <span id="quantity">${productArray[i].quantity}</span></p>
+                    <p class="basket-font">Quantité : <span class="teddy_quantity">${productArray[i].quantity}</span></p>
                 </div> 
                 <label for="quantity_change" class="basket_input_position">
-                    <input class="w-50 basket-font" type="number" min="0" maxlength="2" id="quantity_changer" value="${productArray[i].quantity}">
+                    <input class="w-50 basket-font quantity_changer" type="number" min="0" maxlength="2" value="${productArray[i].quantity}">
                 </label>
               </div>
               <div>
-                <p class="basket-font">Prix unitaire : <span class="price">${productArray[i].price/100} €</span></p>
+                <p class="basket-font">Prix unitaire : <span class="teddy_price">${productArray[i].price/100} €</span></p>
               </div>
               <div>
                 <p class="basket-font">Prix total : <span class="this_basket_total_price">${productArray[i].quantity*productArray[i].price/100} €</span></p>
@@ -59,23 +59,36 @@ function displayOrder(){ /*Display what customer chose from product_page*/
           </div>
         </div>
     </div>`
-
-    const inputQuantity = parseInt(document.getElementById('quantity_changer').value); /*get input value*/
-
-    console.log(inputQuantity);
-
-    const quantityDisplayed = document.getElementById('quantity'); /*get quantity displayed next to input*/
-
-    console.log(quantityDisplayed);
-
-
-
     }
 }
-
 displayOrder();
 
-console.log(productArray);
+const listInputQuantity = document.querySelectorAll('.quantity_changer'); /*get input value*/
+
+const listQuantityDisplayed = document.querySelectorAll('.teddy_quantity'); /*get quantity displayed in the quantity slot*/
+
+const listTeddyPrice = document.querySelectorAll('.this_basket_total_price'); /*get price for all teddies in relation to 1 teddy model*/
+
+/*INPUT QUANTITY AND TOTAL PRICE CHANGE PROCESS */
+
+listInputQuantity.forEach((inputQuantity, i) => {
+
+  inputQuantity.addEventListener('change', function(){
+
+    listQuantityDisplayed[i].innerHTML = this.value;
+
+    let data = parseInt(this.value);
+
+    listTeddyPrice[i].innerHTML = (data*productArray[i].price)/100;
+
+  })
+});
+
+
+
+
+
+//console.log(productArray);
 
 
 
