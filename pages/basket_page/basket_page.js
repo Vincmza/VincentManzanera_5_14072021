@@ -84,21 +84,35 @@ listInputQuantity.forEach((inputQuantity, i) => {
 
     listTeddyPrice[i].innerHTML = (data*productArray[i].price)/100;
 
-  })
+    const keyLocalStorage = window.localStorage.key(i);
+
+    const teddy = JSON.parse(window.localStorage.getItem(keyLocalStorage));
+
+    teddy.quantity = data;
+
+    window.localStorage.setItem(keyLocalStorage, JSON.stringify(teddy));
+
+    displayFinalResult();
+
+  }) 
 });
-function totalResultDisplay(){
+
+/*FINAL RESULT OF ALL BASKETS*/
+
+function displayFinalResult(){
 
   let totalResult = 0;
 
-  for(let i = 0; i<listTeddyPrice.length; i++){
+  for( let i = 0; i<listTeddyPrice.length; i++){
 
-      totalResult += parseInt(listTeddyPrice[i].innerHTML);
+    totalResult += parseInt(listTeddyPrice[i].innerHTML);
   }
 
-  totalPrice.innerHTML += `<span>${totalResult} €</span>`
+  totalPrice.innerHTML = `<span>${totalResult} €</span>`;
+
 }
 
-totalResultDisplay();
+displayFinalResult();
 
 
 
@@ -106,11 +120,6 @@ totalResultDisplay();
 
 
 
-
-
-
-
-//console.log(productArray);
 
 
 
