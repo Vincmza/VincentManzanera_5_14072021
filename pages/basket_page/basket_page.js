@@ -69,6 +69,9 @@ const listQuantityDisplayed = document.querySelectorAll('.teddy_quantity'); /*ge
 
 const listTeddyPrice = document.querySelectorAll('.this_basket_total_price'); /*get price for all teddies in relation to 1 teddy model*/
 
+let totalPrice = document.getElementById('total_price');
+
+
 /*INPUT QUANTITY AND TOTAL PRICE CHANGE PROCESS */
 
 listInputQuantity.forEach((inputQuantity, i) => {
@@ -83,6 +86,25 @@ listInputQuantity.forEach((inputQuantity, i) => {
 
   })
 });
+function totalResultDisplay(){
+
+  let totalResult = 0;
+
+  for(let i = 0; i<listTeddyPrice.length; i++){
+
+      totalResult += parseInt(listTeddyPrice[i].innerHTML);
+  }
+
+  totalPrice.innerHTML += `<span>${totalResult} €</span>`
+}
+
+totalResultDisplay();
+
+
+
+
+
+
 
 
 
