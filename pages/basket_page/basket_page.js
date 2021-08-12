@@ -49,16 +49,12 @@ function displayOrder(){ /*Display what customer chose from product_page*/
               <div>
                 <p class="basket-font">Prix total : <span class="this_basket_total_price">${productArray[i].quantity*productArray[i].price/100} €</span></p>
               </div>
-              <div>
-                
-                <button id="remove_button" type="button" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
-                  
-              </div>
               
             </div>
           </div>
         </div>
     </div>`
+    
     }
 }
 displayOrder();
@@ -71,6 +67,7 @@ const listTeddyPrice = document.querySelectorAll('.this_basket_total_price'); /*
 
 let totalPrice = document.getElementById('total_price');
 
+const removeButton = document.getElementById('remove_button');
 
 /*INPUT QUANTITY AND TOTAL PRICE CHANGE PROCESS */
 
@@ -94,7 +91,16 @@ listInputQuantity.forEach((inputQuantity, i) => {
 
     displayFinalResult();
 
-  }) 
+  })
+  removeButton.addEventListener('click', function(){
+    
+    orderContainer.innerHTML = '';
+    window.localStorage.clear();
+    displayFinalResult();
+
+  })
+  
+
 });
 
 /*FINAL RESULT OF ALL BASKETS*/
