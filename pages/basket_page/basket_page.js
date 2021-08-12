@@ -92,7 +92,10 @@ listInputQuantity.forEach((inputQuantity, i) => {
     displayFinalResult();
 
   })
-  removeButton.addEventListener('click', function(){
+
+  /*DATA ERASED FROM BASKET AND LOCAL STORAGE ONCE REMOVE BUTTON CLIKED*/
+
+  removeButton.addEventListener('click', function(){ 
     
     orderContainer.innerHTML = '';
     window.localStorage.clear();
@@ -100,7 +103,6 @@ listInputQuantity.forEach((inputQuantity, i) => {
 
   })
   
-
 });
 
 /*FINAL RESULT OF ALL BASKETS*/
@@ -120,6 +122,34 @@ function displayFinalResult(){
 
 displayFinalResult();
 
+/*GET ID FROM LOCAL STORAGE DATA STORED IN PRODUCT ARRAY*/
+
+const itemIdArray =[];
+
+for (let itemId of productArray){
+
+  let dataItem = itemId._id;
+
+  itemIdArray.push(dataItem);
+}
+
+console.log(itemIdArray);
+
+/*CUSTOMER INFORMATIONS STORED HERE*/
+
+const customerOrderData = {
+  contact: {
+    firstName: document.getElementById('firstname').value,
+    lastName: document.getElementById('lastname').value,
+    address: document.getElementById('inputAddress').value,
+    addressDetails: document.getElementById('inputAddress2').value,
+    city: document.getElementById('inputCity').value,
+    email: document.getElementById('email').value,
+  },
+  products: [itemIdArray],
+};
+
+console.log(customerOrderData);
 
 
 
