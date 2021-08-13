@@ -141,8 +141,7 @@ const customerOrderData = {
   contact: {
     firstName: document.getElementById('firstname').value,
     lastName: document.getElementById('lastname').value,
-    address: document.getElementById('inputAddress').value,
-    addressDetails: document.getElementById('inputAddress2').value,
+    address: document.getElementById('inputAddress').value + document.getElementById('inputAddress2').value,
     city: document.getElementById('inputCity').value,
     email: document.getElementById('email').value,
   },
@@ -150,6 +149,23 @@ const customerOrderData = {
 };
 
 console.log(customerOrderData);
+
+const formSubmitButton = document.getElementById('customer_data_submit_button');
+
+const form = document.getElementById('customer_data_form');
+
+formSubmitButton.addEventListener('click', function(e){
+
+  e.preventDefault();
+
+  if(form.checkValidity() == true ){
+
+    console.log('Houra !');
+  } 
+  else {
+    window.alert('Les données saisies sont incorrectes')
+  }
+})
 
 
 
