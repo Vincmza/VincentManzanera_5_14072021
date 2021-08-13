@@ -135,7 +135,7 @@ for (let itemId of productArray){
 
 console.log(itemIdArray);
 
-/*CUSTOMER INFORMATIONS STORED HERE*/
+/*CUSTOMER INFORMATIONS STORED HERE IN ORDER TO POST WITH FETCH*/
 
 const customerOrderData = {
   contact: {
@@ -148,11 +148,13 @@ const customerOrderData = {
   products: [itemIdArray],
 };
 
-console.log(customerOrderData);
+//console.log(customerOrderData);
 
 const formSubmitButton = document.getElementById('customer_data_submit_button');
 
 const form = document.getElementById('customer_data_form');
+
+/*POST REQUEST IF FORM VALIDATION IS TRUE*/
 
 formSubmitButton.addEventListener('click', function(e){
 
@@ -160,7 +162,18 @@ formSubmitButton.addEventListener('click', function(e){
 
   if(form.checkValidity() == true ){
 
-    console.log('Houra !');
+    fetch("http://localhost:3000/api/teddies",
+    {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify(customerOrderData)
+    })
+
+    console.log('Tu es un winner');
+
   } 
   else {
     window.alert('Les données saisies sont incorrectes')
