@@ -133,22 +133,9 @@ for (let itemId of productArray){
   itemIdArray.push(dataItem);
 }
 
-console.log(itemIdArray);
+//console.log(itemIdArray);
 
 /*CUSTOMER INFORMATIONS STORED HERE IN ORDER TO POST WITH FETCH*/
-
-const customerOrderData = {
-  contact: {
-    firstName: document.getElementById('firstname').value,
-    lastName: document.getElementById('lastname').value,
-    address: document.getElementById('inputAddress').value + document.getElementById('inputAddress2').value,
-    city: document.getElementById('inputCity').value,
-    email: document.getElementById('email').value,
-  },
-  products: [itemIdArray],
-};
-
-//console.log(customerOrderData);
 
 const formSubmitButton = document.getElementById('customer_data_submit_button');
 
@@ -160,9 +147,20 @@ formSubmitButton.addEventListener('click', function(e){
 
   e.preventDefault();
 
+  const customerOrderData = {
+    contact: {
+      firstName: document.getElementById('firstname').value,
+      lastName: document.getElementById('lastname').value,
+      address: document.getElementById('inputAddress').value + document.getElementById('inputAddress2').value,
+      city: document.getElementById('inputCity').value,
+      email: document.getElementById('email').value,
+    },
+    products: [itemIdArray],
+  };
+
   if(form.checkValidity() == true ){
 
-    fetch("http://localhost:3000/api/teddies",
+    fetch("http://localhost:3000/api/teddies/order",
     {
         headers: {
           'Accept': 'application/json',
@@ -170,9 +168,21 @@ formSubmitButton.addEventListener('click', function(e){
         },
         method: "POST",
         body: JSON.stringify(customerOrderData)
-    })
+    }).then(response => {
 
-    console.log('Tu es un winner');
+      if(response.ok == true){
+
+        return response.json();
+            
+      }
+    }).then(response => {
+
+      window.sessionStorage.setItem('order', JSON.stringify(response));
+      window.localStorage.clear();
+
+    })
+    
+    //console.log('Tu es un winner');
 
   } 
   else {
