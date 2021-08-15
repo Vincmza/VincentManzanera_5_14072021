@@ -179,6 +179,7 @@ formSubmitButton.addEventListener('click', function(e){
 
       window.sessionStorage.setItem('order', JSON.stringify(response));
       window.localStorage.clear();
+      window.location.assign('http://127.0.0.1:5500/pages/confirm_page/confirm_page.html');
 
     })
     
