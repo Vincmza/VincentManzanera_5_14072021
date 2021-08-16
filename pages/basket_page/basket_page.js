@@ -20,7 +20,7 @@ for (let i =0; i<window.localStorage.length; i++){ /*Run local storage data and 
 
 const orderContainer = document.getElementById('order_container');
 
-function displayOrder(){ /*Display what customer chose from product_page*/
+function displayOrder(productArray, orderContainer){ /*Display what customer chose from product_page*/
 
     for(let i = 0; i<productArray.length; i++){
 
@@ -57,7 +57,7 @@ function displayOrder(){ /*Display what customer chose from product_page*/
     
     }
 }
-displayOrder();
+displayOrder(productArray, orderContainer);
 
 const listInputQuantity = document.querySelectorAll('.quantity_changer'); /*get input value*/
 
@@ -89,7 +89,7 @@ listInputQuantity.forEach((inputQuantity, i) => {
 
     window.localStorage.setItem(keyLocalStorage, JSON.stringify(teddy));
 
-    displayFinalResult();
+    displayFinalResult(listTeddyPrice, totalPrice);
 
   })
 
@@ -107,7 +107,7 @@ listInputQuantity.forEach((inputQuantity, i) => {
 
 /*FINAL RESULT OF ALL BASKETS*/
 
-function displayFinalResult(){
+function displayFinalResult(listTeddyPrice, totalPrice){
 
   let totalResult = 0;
 
@@ -120,7 +120,7 @@ function displayFinalResult(){
 
 }
 
-displayFinalResult();
+displayFinalResult(listTeddyPrice, totalPrice);
 
 /*GET ID FROM LOCAL STORAGE DATA STORED IN PRODUCT ARRAY*/
 
@@ -155,7 +155,7 @@ formSubmitButton.addEventListener('click', function(e){
       city: document.getElementById('inputCity').value,
       email: document.getElementById('email').value,
     },
-    products: [itemIdArray],
+    products: itemIdArray,
   };
 
   if(form.checkValidity() == true ){
