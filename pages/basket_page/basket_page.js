@@ -92,7 +92,7 @@ listInputQuantity.forEach((inputQuantity, i) => {
     displayFinalResult(listTeddyPrice, totalPrice);
 
   })
-
+  
   /*DATA ERASED FROM BASKET AND LOCAL STORAGE ONCE REMOVE BUTTON CLIKED*/
 
   removeButton.addEventListener('click', function(){ 
@@ -117,7 +117,7 @@ function displayFinalResult(listTeddyPrice, totalPrice){
   }
 
   totalPrice.innerHTML = `<span>${totalResult} €</span>`;
-
+  
 }
 
 displayFinalResult(listTeddyPrice, totalPrice);
@@ -154,6 +154,7 @@ formSubmitButton.addEventListener('click', function(e){
       address: document.getElementById('inputAddress').value + document.getElementById('inputAddress2').value,
       city: document.getElementById('inputCity').value,
       email: document.getElementById('email').value,
+      price : parseInt(totalPrice.textContent),
     },
     products: itemIdArray,
   };
