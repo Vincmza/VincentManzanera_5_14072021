@@ -90,7 +90,7 @@ function chooseTeddyColor(color){
             
             <div class="ps-2 pe-2">
                 <p class="card-text product_page_description">${color.description}</p>
-                <p class="text-center fs-2">29€</p>
+                <p class="text-center fs-2">${color.price/100} €</p>
             </div>
             
 
