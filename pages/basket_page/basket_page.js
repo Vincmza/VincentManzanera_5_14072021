@@ -161,7 +161,7 @@ formSubmitButton.addEventListener('click', function(e){
     products: itemIdArray,
   };
 
-  if(form.checkValidity() == true ){
+  if(form.reportValidity() == true ){
 
     fetch("http://localhost:3000/api/teddies/order",
     {
@@ -190,7 +190,7 @@ formSubmitButton.addEventListener('click', function(e){
 
   } 
   else {
-    window.alert('Les données saisies sont incorrectes')
+    //window.alert('Les données saisies sont incorrectes')
   }
 })
 
