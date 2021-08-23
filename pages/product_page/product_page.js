@@ -17,7 +17,7 @@ function getTeddiesInfos(){
     })
     .then(function(data){
 
-        console.log(data);
+        //console.log(data);
 
         chooseTeddyColor(data);
 

@@ -97,13 +97,14 @@ listInputQuantity.forEach((inputQuantity, i) => {
 
   removeButton.addEventListener('click', function(){ 
     
-    orderContainer.innerHTML = '';
+    orderContainer.innerHTML = `<h1 class="text-center pb-4">Votre panier est vide désormais</h1>`;
     window.localStorage.clear();
-    displayFinalResult();
-
+    totalPrice.innerHTML = `<span>0 €</span>`;
+  
   })
   
 });
+
 
 /*FINAL RESULT OF ALL BASKETS*/
 
