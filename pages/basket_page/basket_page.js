@@ -92,12 +92,12 @@ listInputQuantity.forEach((inputQuantity, i) => {
     displayFinalResult(listTeddyPrice, totalPrice);
 
   })
-  
+
   /*DATA ERASED FROM BASKET AND LOCAL STORAGE ONCE REMOVE BUTTON CLIKED*/
 
   removeButton.addEventListener('click', function(){ 
     
-    orderContainer.innerHTML = `<h1 class="text-center pb-4">Votre panier est vide désormais</h1>`;
+    orderContainer.innerHTML = `<h1 class="text-center pb-4 fs-4">Votre panier est vide désormais</h1>`;
     window.localStorage.clear();
     totalPrice.innerHTML = `<span>0 €</span>`;
   
@@ -123,6 +123,7 @@ function displayFinalResult(listTeddyPrice, totalPrice){
 
 displayFinalResult(listTeddyPrice, totalPrice);
 
+//console.log(totalPrice);
 /*GET ID FROM LOCAL STORAGE DATA STORED IN PRODUCT ARRAY*/
 
 const itemIdArray =[];
