@@ -1,29 +1,22 @@
-function getDataFromLocalStorage(key){ /*Get local storage data to parse them*/
-
+/*Récupérer les données du local storage et les traiter avec JSON.parse()*/
+function getDataFromLocalStorage(key){ 
     const data=localStorage.getItem(key);
-
     if(data){
-
         return JSON.parse(data)
-
     }
     return null
 }
 
-const productArray = []; /*local storage data storage*/
-
+/*Stockage des données récupérées dans le local storage*/
+const productArray = []; 
 for (let i =0; i<window.localStorage.length; i++){ /*Run local storage data and store them in productArray*/
-
     productArray.push(getDataFromLocalStorage(window.localStorage.key(i)));
-
 }
 
 const orderContainer = document.getElementById('order_container');
-
-function displayOrder(productArray, orderContainer){ /*Display what customer chose from product_page*/
-
+/*Résumé du panier de l'utilisateur*/
+function displayOrder(productArray, orderContainer){ 
     for(let i = 0; i<productArray.length; i++){
-
         orderContainer.innerHTML += `<div class="card mb-4">
         <div class="row g-0">
           <div class="col-sm-4">
@@ -48,107 +41,73 @@ function displayOrder(productArray, orderContainer){ /*Display what customer cho
               </div>
               <div>
                 <p class="basket-font">Prix total : <span class="this_basket_total_price">${productArray[i].quantity*productArray[i].price/100} €</span></p>
-              </div>
-              
+              </div>        
             </div>
           </div>
         </div>
-    </div>`
-    
+    </div>`    
     }
 }
 displayOrder(productArray, orderContainer);
 
-const listInputQuantity = document.querySelectorAll('.quantity_changer'); /*get input value*/
-
-const listQuantityDisplayed = document.querySelectorAll('.teddy_quantity'); /*get quantity displayed in the quantity slot*/
-
-const listTeddyPrice = document.querySelectorAll('.this_basket_total_price'); /*get price for all teddies in relation to 1 teddy model*/
-
+/*Récupération de la valeur de l'input*/
+const listInputQuantity = document.querySelectorAll('.quantity_changer'); 
+/*Récupération de la quantité affichée à gauche de l'input*/
+const listQuantityDisplayed = document.querySelectorAll('.teddy_quantity'); 
+/*Prix affiché d'un seul produit multiplié par la quantité*/
+const listTeddyPrice = document.querySelectorAll('.this_basket_total_price');
+/*Prix total du panier*/
 let totalPrice = document.getElementById('total_price');
-
+/*Bouton de supression des données du panier*/
 const removeButton = document.getElementById('remove_button');
 
-/*INPUT QUANTITY AND TOTAL PRICE CHANGE PROCESS */
-
+/*Quantité de l'input impactant les prix affichés, sous-total et prix du panier total */
 listInputQuantity.forEach((inputQuantity, i) => {
-
   inputQuantity.addEventListener('change', function(){
-
     listQuantityDisplayed[i].innerHTML = this.value;
-
     let data = parseInt(this.value);
-
     listTeddyPrice[i].innerHTML = (data*productArray[i].price)/100;
-
     const keyLocalStorage = window.localStorage.key(i);
-
     const teddy = JSON.parse(window.localStorage.getItem(keyLocalStorage));
-
     teddy.quantity = data;
-
     window.localStorage.setItem(keyLocalStorage, JSON.stringify(teddy));
-
     displayFinalResult(listTeddyPrice, totalPrice);
-
   })
 
-  /*DATA ERASED FROM BASKET AND LOCAL STORAGE ONCE REMOVE BUTTON CLIKED*/
-
-  removeButton.addEventListener('click', function(){ 
-    
+  /*Suppression des données du panier et du local storage au clic sur le bouton corbeille*/
+  removeButton.addEventListener('click', function(){    
     orderContainer.innerHTML = `<h1 class="text-center pb-4 fs-4">Votre panier est vide désormais</h1>`;
     window.localStorage.clear();
-    totalPrice.innerHTML = `<span>0 €</span>`;
-  
-  })
-  
+    totalPrice.innerHTML = `<span>0 €</span>`; 
+  }) 
 });
 
-
-/*FINAL RESULT OF ALL BASKETS*/
-
+/*Prix total additionnant tous les sous-totaux*/
 function displayFinalResult(listTeddyPrice, totalPrice){
-
   let totalResult = 0;
-
   for( let i = 0; i<listTeddyPrice.length; i++){
-
     totalResult += parseInt(listTeddyPrice[i].innerHTML);
   }
-
   totalPrice.innerHTML = `<span>${totalResult} €</span>`;
-  
 }
 
 displayFinalResult(listTeddyPrice, totalPrice);
 
-//console.log(totalPrice);
-/*GET ID FROM LOCAL STORAGE DATA STORED IN PRODUCT ARRAY*/
-
+/*Stockage de l'id des produits contenus dans le local storage*/
 const itemIdArray =[];
-
 for (let itemId of productArray){
-
   let dataItem = itemId._id;
-
   itemIdArray.push(dataItem);
 }
 
-//console.log(itemIdArray);
-
-/*CUSTOMER INFORMATIONS STORED HERE IN ORDER TO POST WITH FETCH*/
-
+/*Récupération du bouton de soumission du formulaire*/
 const formSubmitButton = document.getElementById('customer_data_submit_button');
-
+/*Récupération du formulaire entier*/
 const form = document.getElementById('customer_data_form');
 
-/*POST REQUEST IF FORM VALIDATION IS TRUE*/
-
+/*Envoi des données du formulaire si ces dernières sont conformes*/
 formSubmitButton.addEventListener('click', function(e){
-
   e.preventDefault();
-
   const customerOrderData = {
     contact: {
       firstName: document.getElementById('firstname').value,
@@ -160,9 +119,7 @@ formSubmitButton.addEventListener('click', function(e){
     },
     products: itemIdArray,
   };
-
   if(form.reportValidity() == true ){
-
     fetch("http://localhost:3000/api/teddies/order",
     {
         headers: {
@@ -172,26 +129,16 @@ formSubmitButton.addEventListener('click', function(e){
         method: "POST",
         body: JSON.stringify(customerOrderData)
     }).then(response => {
-
       if(response.ok == true){
-
-        return response.json();
-            
+        return response.json();            
       }
     }).then(response => {
-
       window.sessionStorage.setItem('order', JSON.stringify(response));
       window.localStorage.clear();
       window.location.assign('http://127.0.0.1:5500/pages/confirm_page/confirm_page.html');
-
     })
-    
-    //console.log('Tu es un winner');
-
+    .catch(error => {console.log(error)});   
   } 
-  else {
-    //window.alert('Les données saisies sont incorrectes')
-  }
 })
 
 
