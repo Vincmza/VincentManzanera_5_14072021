@@ -1,35 +1,32 @@
 const teddyContainer = document.getElementById('teddy-container');
 const BASE_URL = 'http://localhost:3000/api/teddies';
 
-
+/*Récupération des données du serveur*/
 function getTeddiesInfos (url) {
-
-    return fetch (url).then(function(response){
+    return fetch (url)
+    .then(function(response){
         if (response.ok){
             return response.json()
-        }
+        }      
     })
     .then(function(data){
-
         return data
     })
+    .catch(error => {console.log(error)})
 }
 
+/*Affichage des données récupérées*/
 async function displayTeddiesInfo (){
-
     const data= await getTeddiesInfos(BASE_URL);
     data.forEach(teddy => {
-
-        teddyContainer.innerHTML += createTeddyCard(teddy);
-        
+        teddyContainer.innerHTML += createTeddyCard(teddy);        
     });
 }
 
+/*Création de la carte affichant les données pour un ourson*/
 function createTeddyCard (teddy){
-    return `
-    
-    <article class="card card-by-default shadow" style="width: 20rem;">
-    
+    return `  
+    <article class="card card-by-default shadow" style="width: 20rem;">  
     <img src="${teddy.imageUrl}" class="card-img-top height-by-default teddy_view_page_img" alt="photo de l'ours en peluche teddy">
     <div class="card-body" style="background-color: rgb(243, 233, 241);">
       <h2 class="card-title">${teddy.name}</h2>
@@ -37,11 +34,9 @@ function createTeddyCard (teddy){
       <p class="text-center fs-3">${teddy.price/100}€</p>
       <div class="d-flex justify-content-end"><a href="/pages/product_page/product_page.html?_id=${teddy._id}" class="btn btn-primary rounded-pill more-details-button">Plus de détails</a></div>                    
     </div>
-
     </article>`
 }
 
-//getTeddiesInfos();
 displayTeddiesInfo();
 
 

@@ -1,9 +1,9 @@
-let orderData = JSON.parse(sessionStorage.getItem('order')); /*GET DATA FROM SESSION STORAGE*/
+/*Get data from session storage*/
+let orderData = JSON.parse(sessionStorage.getItem('order')); 
+/*Get id containing order confirmation template*/
+let orderConfirmation = document.getElementById('order_confirmation'); 
 
-console.log(orderData)
-
-let orderConfirmation = document.getElementById('order_confirmation'); /*GET ID CONTAINING ORDER CONFIRMATION TEMPLATE*/
-
+/*Provide order informations in the related template*/
 orderConfirmation.innerHTML += `<div>
 <h1 class="fs-3">Votre commande a bien été prise en compte</h1>
 </div>
@@ -19,5 +19,3 @@ orderConfirmation.innerHTML += `<div>
 <div>
 <p>Vous recevrez un mail de confirmation à l'adresse suivante :<span class="customer_email"> ${orderData.contact.email}</span></p>
 </div>`
-
-//console.log(orderConfirmation)
